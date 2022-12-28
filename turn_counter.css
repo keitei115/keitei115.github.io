@@ -1,0 +1,177 @@
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+}
+
+table,
+td,
+th {
+    border: 1px solid #595959;
+    border-collapse: collapse;
+}
+
+table {
+    max-width: 600px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    background: #f8e5b1;
+    padding: 3px;
+    width: 33%;
+    height: 25px;
+}
+
+th.front {
+    background: #8cbaff;
+}
+
+th.field {
+    background: #99ff8c;
+}
+
+th.back {
+    background: #ffe48c;
+}
+
+td.name {
+    background: #f8f4ef;
+    padding: 3px;
+    width: 26%;
+    height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+    white-space: nowrap;
+}
+
+td.name.front {
+    background: #f0f6ff;
+}
+
+td.name.field {
+    background: #f3fff2;
+}
+
+td.name.back {
+    background: #fffbed;
+}
+
+td.start {
+    background: #e0bdb3;
+    padding: 3px;
+    width: 26%;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.3em
+}
+
+td.stop {
+    background: #cfb4ab;
+}
+
+td.ex {
+    background: #ecd7d1;
+}
+
+td.disp {
+    background: #f8f8f8ab;
+    padding: 1px;
+    width: 5%;
+    height: 25px;
+    text-align: center;
+    color: #bebebe;
+}
+
+td.disp.first {
+    color: #000000;
+}
+
+td.disp.last {
+    color: #ff0000;
+}
+
+#disp_turn {
+    color: #000000;
+}
+
+td.disp.front {
+    background: #f4f7fc;
+}
+
+td.disp.field {
+    background: #f7fff7;
+}
+
+td.disp.back {
+    background: #fffdf5;
+}
+
+td.count {
+    background: #8ac7bd;
+    padding: 3px;
+    width: 26%;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.2em
+}
+
+td.reset {
+    background: #c4be9c;
+    padding: 3px;
+    width: 26%;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.0em
+}
+
+#chuiten {
+    color: #b13d29;
+}
+
+body {
+	overscroll-behavior-y: none;
+}
+
+@media screen and (min-width: 750px) {
+    td.reset:hover {
+        filter: brightness(110%);
+    }
+
+    td.start:hover {
+        filter: brightness(110%);
+    }
+
+    td.count:hover {
+        filter: brightness(110%);
+    }
+}
+@media screen and (max-width: 750px) {
+    td.reset:active {
+        filter: brightness(110%);
+    }
+
+    td.start:active {
+        filter: brightness(110%);
+    }
+
+    td.count:active {
+        filter: brightness(110%);
+    }
+}

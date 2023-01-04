@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>ツール置き場</title>
+    <style>
+        .Q {
+            list-style-type: "Q.";
+        }
+        .A {
+            list-style-type: "A.";
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2734206178910572"crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body class="bg-primary bg-opacity-10">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">ツール置き場</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/turn_counter.html">ターン管理ツール</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/marking.html">マーキングメモツール</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/overview.html">このサイトについて</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 rounded bg-light shadow-sm m-1 px-0" style="max-width: 60em;">
+                <h4 class="p-3 mb-1">このサイトについて</h3>
+                <p class="p-3 mb-2">
+                    このサイトは、JavaScriptなどで作られたツールを置く場所です。<br>
+                    随時更新していきますのでよろしくお願いします。
+                </p>
+                <hr width="95%" class="mb-2 mx-auto">
+                <h6 class="p-3 mb-1">ターン管理ツール</h6>
+                <p class="p-3 mb-2">
+                    6世代・BDSP向けに作られた、追い風、壁、天候などのターン管理を手動で行うためのツールです。<br>
+                    追い風などが発動した瞬間に「開始」ボタンを押し、ターンが進んだときに「ターン経過」ボタンを押すことで、
+                    追い風などがいつ終わるのかをカウントすることが出来ます。<br>
+                    壁や天候のように3ターンに延長可能なものは、「開始」ボタンを押されると「延長」ボタンに変更するので、それを押すと3ターン分延長されます。<br>
+                    トリックルームなどが解除された場合は、「解除」ボタンを押してください。カウンターが0になります。(「開始」ボタンを押してると「解除」ボタンに勝手に変更されてます)<br>
+                    瓦割りで壁が解除された場合は「瓦割り」ボタンで壁のカウントを0にすることができます。<br>
+                    また、ボタンを右クリック(スマホでは長押し)するとそれぞれ個別にカウントできます。押し忘れてカウントしてなかった場合に使ってください。<br>
+                    <br>
+                    注意点:リフレクター、光の壁、天候が0ターンになっても「延長」ボタンが「開始」ボタンにならないのは仕様です。<br>
+                    リフレクター等が再起動したり別の天候に変わった際にボタンが「延長」になっている場合は、
+                    一旦「延長」ボタンを押すと「再起動」ボタンになるので「再起動」ボタンを押してください。
+
+                <hr width="95%" class="mb-2 mx-auto">
+                <h6 class="p-3 mb-1">マーキングメモツール</h6>
+                <p class="p-3 mb-2">
+                    ポケモンに個体値を示すマーキングをつける際に、一旦メモして一斉につけるためのツールです。<br>
+                    スマホ版では1列、PC版・大きいタプレットでは2列(手持ちの並び順と同じ)になります。<br>
+                    リセットボタンで全てまっさらになります。
+                </p>
+                <hr width="95%" class="mb-2 mx-auto">
+                <h6 class="p-3 mb-1">トリプルフリーデータベースとの関係</h6>
+                <p class="p-3 mb-2">
+                    もともと上2つのツールはトリプルフリーデータベースに置かれていたツールでした。<br>
+                    しかし、トリプルフリーデータベースに置くとメンテナンスが面倒であること(サクッと修正できない)、
+                    作者が広告収入を得たい(無職となってしまったため)がトリプルフリーデータベースに広告を置こうとすると面倒であることから、
+                    メンテナンスがしやすく広告を置きやすいGithub pagesに移動させました。<br>
+                    以上の経緯から、このサイトで引き続きツールを使っていただきますとありがたいです。
+                </p>
+                <hr width="95%" class="mb-2 mx-auto">
+                <h5 class="p-3 mb-1">プライバシーポリシー</h6>
+                <h6 class="p-3 mb-1">広告について</h6>
+                <p class="p-3 mb-2">
+                    当サイトでは、第三者配信の広告サービス(Google AdSense)を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。
+                    クッキーを使用することで当サイトはユーザーのコンピュータを識別できるようになりますが、ユーザー個人を特定できるものではありません。
+                    Cookieを無効にする方法やGoogle AdSenseに関する詳細は<a href="https://policies.google.com/technologies/ads?gl=jp">こちら</a>をご確認ください。
+                </p>
+                <h6 class="p-3 mb-1">著作権について</h6>
+                <p class="p-3 mb-2">
+                    当サイトについて、著作権や肖像権に関して問題がございましたら、お問い合わせフォームよりご連絡ください。
+                </p>
+                <h6 class="p-3 mb-1">リンクについて</h6>
+                <p class="p-3 mb-2">
+                    当サイトは基本的にリンクフリーです。リンクを行う場合の許可や連絡は不要です。
+                </p>
+                <hr width="95%" class="mb-2 mx-auto">
+                <h6 class="p-3 mb-1">お問い合わせ</h6>
+                <p class="p-3 mb-2">
+                    <a href="https://twitter.com/keitei115">作者のTwitter</a>もしくは<br>
+                    <a href="https://docs.google.com/forms/d/1W1v0xqW5hD83Qs8JI-nNLICFrCaRJ2kvfoLqiPiJdQE/viewform?edit_requested=true">お問い合わせフォーム</a>にお願いします。
+                </p>
+                <hr width="95%" class="mb-2 mx-auto">
+                <h6 class="p-3 mb-1">Q&A</h6>
+                <p class="p-3 mb-2">
+                    お問い合わせの回答をここに載せていく予定です。
+                </p>
+                <!--
+                <p class="p-3 mb-2">
+                    <ol>
+                        <li class="Q"></li>
+                        <li class="A"></li>
+                    </ol>
+                <p class="p-3 mb-2">
+                </p>
+                -->
+            </div>
+        </div>
+    </div>
+</body>

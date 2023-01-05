@@ -3,7 +3,7 @@
   "short_name"        : "ポケモンツール",
   "description"       : "JS等で書かれたポケモン用ツールを置く場所",
     "scope": "/",
-  "start_url"         : "/",
+  "start_url"         : "/tool/toolmenu.html",
   "display"           : "standalone",
   "background_color"  : "#ff0000",
   "theme_color"       : "#ff0000",

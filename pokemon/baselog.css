@@ -1,0 +1,49 @@
+﻿@charset "utf-8";
+body {
+    background-color:#cccccc;   
+    font-size:100%;
+    font-family: "ＭＳ ゴシック",sans-serif;
+    line-height:1.5;
+}
+div#pagebody {
+    width:1200px; margin:0 auto;    /*内容全体をセンタリング*/
+    background-color:#ffffff;       /*内容全体の背景色*/
+}
+div#pageleft {
+    display: flex; /*インライン*/
+}
+div#article {
+	margin-left: 40px;
+}
+div#pokemon {
+	text-align:center; 
+	margin: 30px 30px;
+	padding: 10px;
+	border: medium solid #333333;
+	line-height: 30px;
+}
+div#game {
+	margin: 30px 30px;
+	padding: 10px;
+	border: medium solid #333333;
+}
+#menu li {
+    list-style-type:none;       /*リストマーカー無しにする*/
+    display:inline;
+    float:left;			/*リスト項目を横に並べる*/
+}
+#menu li a {
+    background-color:navy;  /*背景色*/
+    color:#ffffff;      /*文字色*/
+    display:block;          /*リンク部分をブロック表示にする*/
+    width:240px; height:35px;   /*幅と高さ*/
+    padding:15px 0px 0px 0px;	/*上パディング*/
+    text-align:center;      /*テキストをセンター揃えにする*/
+    text-decoration:none;       /*リンク部分を下線無しにする*/
+    background-image:url(img/poron1.png); /*背景画像を指定*/
+    background-repeat:no-repeat; /*背景画像を繰り返さない*/
+}
+#menu li a:hover {
+    background-color:#000066;   /*リンクにマウスが乗ったら背景色を変更する*/
+    background-image:url(img/poron2.png); 	/*リンクにマウスが乗ったら背景画像を変更する*/
+}

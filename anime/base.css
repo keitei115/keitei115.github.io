@@ -1,6 +1,6 @@
 ﻿@charset "utf-8";
 body {
-    background-color:#ff6699;   
+    background-color:#ff6699;
     font-size:90%;
     font-family: "メイリオ",sans-serif;
     line-height:1.5;
@@ -14,13 +14,13 @@ div#pagebody {
 }
 div#inpage {
     display: flex; /*インライン*/
-    width="1400px"
+    width:"1400px"
 }
 div#article {
 	margin-left: 40px;
 }
 div#pokemon {
-	text-align:center; 
+	text-align:center;
 	margin: 30px 30px;
 	padding: 10px;
 	border: medium solid #333333;

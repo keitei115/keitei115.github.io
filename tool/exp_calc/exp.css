@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+.inputName {
+    width: 7rem;
+    height: 1.5rem;
+    padding: 1px 2px;
+}
+
+.inputNumber {
+    width: 3rem;
+    height: 1.5rem;
+    padding: 1px 2px;
+}
+
+.result {
+    max-width: 10rem;
+}
+
+.enter {
+    max-width: 15rem;
+}
+

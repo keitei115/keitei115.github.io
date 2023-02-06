@@ -216,15 +216,33 @@ function App() {
         console.log(podata.result);
         if (podata.result == "true") {
             return (
-                <h1>必要なアメの量 - XL:{podata.requierdXL}, L:{podata.requierdL}, M:{podata.requierdM}, S:{podata.requierdS}, XS:{podata.requierdXS}, あまった経験値:{podata.excessEXP}</h1>
+                <div className="col-6 result rounded bg-light">
+                    <div>必要なアメ</div>
+                    <table>
+                        <tr><th>XL</th><th>✕</th><th>{podata.requierdXL}</th></tr>
+                        <tr><th>L</th><th>✕</th><th>{podata.requierdL}</th></tr>
+                        <tr><th>M</th><th>✕</th><th>{podata.requierdM}</th></tr>
+                        <tr><th>S</th><th>✕</th><th>{podata.requierdS}</th></tr>
+                        <tr><th>XS</th><th>✕</th><th>{podata.requierdXS}</th></tr>
+                        <tr><th>あまり</th><th>：</th><th>{podata.excessEXP}</th></tr>
+                    </table>
+                </div>
             )
         } else if (podata.result == "error") {
             return (
-                <h1>エラーです！レベルを見直してください</h1>
+                <div className="col-6 result rounded bg-light">
+                    <div>エラーです！</div>
+                    <div>レベルを</div>
+                    <div>見直してください</div>
+                </div>
             )
         }
         return (
-            <h1>アメが足りません! 残りの経験値:{podata.excessEXP}</h1>
+            <div className="col-6 result rounded bg-light">
+                <div>アメが足りません</div>
+                <div>必要な残り経験値</div>
+                <div>{podata.excessEXP}</div>
+            </div>
         )
     }
 
@@ -241,17 +259,23 @@ function App() {
     }
 
     return (
-        <div>
-            {Result()}
-            ポケモン<input value={podata.enteredPoName} onChange={poNameChange} autocomplete="on" list="poNameLlist" /><br></br>
-            {AutoComplete()}
-            現在のレベル<input value={podata.enterFrontLv} onChange={frontLvChange} /><br></br>
-            目標のレベル<input value={podata.enterRearLv} onChange={rearLvChange} /><br></br>
-            XL(30000×)<input value={podata.enteredXL} onChange={xlCanChange} /><br></br>
-            L(10000×)<input value={podata.enteredL} onChange={lCanChange} /><br></br>
-            M(3000×)<input value={podata.enteredM} onChange={mCanChange} /><br></br>
-            S(800×)<input value={podata.enteredS} onChange={sCanChange} /><br></br>
-            XS(100×)<input value={podata.enteredXS} onChange={xsCanChange} /><br></br>
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-6 enter rounded bg-light">
+                    <table>
+                    <input value={podata.enteredPoName} onChange={poNameChange} autocomplete="on" list="poNameLlist" className="inputName" /><br></br>
+                    {AutoComplete()}
+                    <tr><th>現在のレベル</th><input value={podata.enterFrontLv} onChange={frontLvChange} className="inputNumber" /></tr>
+                    <tr><th>目標のレベル</th><input value={podata.enterRearLv} onChange={rearLvChange} className="inputNumber" /></tr>
+                    <tr><th>XL(30000✕)</th><input value={podata.enteredXL} onChange={xlCanChange} className="inputNumber" /></tr>
+                    <tr><th>L(10000✕)</th><input value={podata.enteredL} onChange={lCanChange} className="inputNumber" /></tr>
+                    <tr><th>M(3000✕)</th><input value={podata.enteredM} onChange={mCanChange} className="inputNumber" /></tr>
+                    <tr><th>S(800✕)</th><input value={podata.enteredS} onChange={sCanChange} className="inputNumber" /></tr>
+                    <tr><th>XS(100✕)</th><input value={podata.enteredXS} onChange={xsCanChange} className="inputNumber" /></tr>
+                    </table>
+                </div>
+                {Result()}
+            </div>
         </div>
     );
 }

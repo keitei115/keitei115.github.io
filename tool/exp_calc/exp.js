@@ -1,84 +1,82 @@
+//requiredEXPに達するまで必要なxlCount, lCount, mCount, sCount, xsCountの数を調べる
+//xl=30000, l=10000, m=3000, s=800, xs=100となっており、それらを組み合わせることでrequiredEXPに近づけていく
+//xlLimit, lLimit, mLimit, sLimit, xsLimitはそれぞれxlCount, lCount, mCount, sCount, xsCountの上限となる
 let calcRequirdCandy = function (requiredEXP, xlLimit, lLimit, mLimit, sLimit, xsLimit) {
-    var xls = 0;
-    var ls = 0;
-    var ms = 0;
-    var ss = 0;
-    var xss = 0;
+    let [xlCount, lCount, mCount, sCount, xsCount] = [0, 0, 0, 0, 0];
+    console.log(xlLimit, lLimit, mLimit, sLimit, xsLimit);
 
-    for (let i = 0; i <= xsLimit; i = (i + 1) | 0) {
-        xss = i;
-        //console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100)
-        if (requiredEXP <= i * 100) { break; }
+    //目標経験値に到達するまで、XSアメから順に使っていく
+    for (; (xsCount < xsLimit) && (requiredEXP > calcNowEXP(xlCount, lCount, mCount, sCount, xsCount)); xsCount = (xsCount + 1) | 0) { //高速化のための "i = (i + 1) "
+        console.log(xlCount, lCount, mCount, sCount, xsCount);
+        console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
     }
 
-    for (let i = 0; i <= sLimit; i = (i + 1) | 0) {
-        ss = i;
-        //console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100)
-        if (requiredEXP <= i * 800 + xss * 100) { break; }
+    for (; (sCount < sLimit) && (requiredEXP > calcNowEXP(xlCount, lCount, mCount, sCount, xsCount)); sCount = (sCount + 1) | 0) {
+        console.log(xlCount, lCount, mCount, sCount, xsCount);
+        console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
     }
 
-    for (let i = 0; i <= mLimit; i = (i + 1) | 0) {
-        ms = i;
-        //console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100)
-        if (requiredEXP <= i * 3000 + ss * 800 + xss * 100) { break; }
+    for (; (mCount < mLimit) && (requiredEXP > calcNowEXP(xlCount, lCount, mCount, sCount, xsCount)); mCount = (mCount + 1) | 0) {
+        console.log(xlCount, lCount, mCount, sCount, xsCount);
+        console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
     }
 
-    for (let i = 0; i <= lLimit; i = (i + 1) | 0) {
-        ls = i;
-        //console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100)
-        if (requiredEXP <= i * 10000 + ms * 3000 + ss * 800 + xss * 100) { break; }
+    for (; (lCount < lLimit) && (requiredEXP > calcNowEXP(xlCount, lCount, mCount, sCount, xsCount)); lCount = (lCount + 1) | 0) {
+        console.log(xlCount, lCount, mCount, sCount, xsCount);
+        console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
     }
 
-    for (let i = 0; i <= xlLimit; i = (i + 1) | 0) {
-        xls = i;
-        //console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100)
-        if (requiredEXP <= i * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100) { break; }
+    for (; (xlCount < xlLimit) && (requiredEXP > calcNowEXP(xlCount, lCount, mCount, sCount, xsCount)); xlCount = (xlCount + 1) | 0) {
+        console.log(xlCount, lCount, mCount, sCount, xsCount);
+        console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
     }
 
-    if (requiredEXP > xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100) {
+    if (requiredEXP > calcNowEXP(xlCount, lCount, mCount, sCount, xsCount)) {
         console.log("faild...");
-        console.log(xls + " " + ls + " " + ms + " " + ss + " " + xss);
-        console.log(requiredEXP - xls * 30000 - ls * 10000 - ms * 3000 - ss * 800 - xss * 100);
-        var remainingEXP = requiredEXP - xls * 30000 - ls * 10000 - ms * 3000 - ss * 800 - xss * 100 ;
+        console.log(xlCount, lCount, mCount,sCount, xsCount);
+        console.log(requiredEXP - calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
+        let remainingEXP = requiredEXP - calcNowEXP(xlCount, lCount, mCount, sCount, xsCount);
         return [false, 0, 0, 0, 0, 0, remainingEXP];
     } else {
         console.log("success!");
-        console.log(xls + " " + ls + " " + ms + " " + ss + " " + xss);
-        console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100 - requiredEXP);
+        console.log(xlCount, lCount, mCount,sCount, xsCount);
+        console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount) - requiredEXP);
 
-        for (let i = xls; i > 0; i = (i - 1) | 0) {
-            //console.log(i * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100)
-            if (requiredEXP > i * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100) { break; }
-            xls = i;
+        //大きい方のアメから必要なアメを削っていく
+        for (; xlCount > 0 && (requiredEXP <= calcNowEXP(xlCount-1, lCount, mCount, sCount, xsCount)); xlCount = (xlCount - 1) | 0) {
+            console.log(xlCount, lCount, mCount, sCount, xsCount);
+            console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
         }
 
-        for (let i = ls; i > 0; i = (i - 1) | 0) {
-            //console.log(xls * 30000 + i * 10000 + ms * 3000 + ss * 800 + xss * 100)
-            if (requiredEXP > xls * 30000 + i * 10000 + ms * 3000 + ss * 800 + xss * 100) { break; }
-            ls = i;
+        for (; lCount > 0 && (requiredEXP <= calcNowEXP(xlCount, lCount-1, mCount, sCount, xsCount)); lCount = (lCount - 1) | 0) {
+            console.log(xlCount, lCount, mCount, sCount, xsCount);
+            console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
         }
 
-        for (let i = ms; i > 0; i = (i - 1) | 0) {
-            //console.log(xls * 30000 + ls * 10000 + i * 3000 + ss * 800 + xss * 100)
-            if (requiredEXP > xls * 30000 + ls * 10000 + i * 3000 + ss * 800 + xss * 100) { break; }
-            ms = i;
+        for (; mCount > 0 && (requiredEXP <= calcNowEXP(xlCount, lCount, mCount-1, sCount, xsCount)); mCount = (mCount - 1) | 0) {
+            console.log(xlCount, lCount, mCount, sCount, xsCount);
+            console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
         }
 
-        for (let i = ss; i > 0; i = (i - 1) | 0) {
-            //console.log(xls * 30000 + ls * 10000 + ms * 3000 + i * 800 + xss * 100)
-            if (requiredEXP > xls * 30000 + ls * 10000 + ms * 3000 + i * 800 + xss * 100) { break; }
-            ss = i;
+        for (; sCount > 0 && (requiredEXP <= calcNowEXP(xlCount, lCount, mCount, sCount-1, xsCount)); sCount = (sCount - 1) | 0) {
+            console.log(xlCount, lCount, mCount, sCount, xsCount);
+            console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
         }
 
-        for (let i = xss; i > 0; i = (i - 1) | 0) {
-            //console.log(xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + i * 100)
-            if (requiredEXP > xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + i * 100) { break; }
-            xss = i;
+        for (; xsCount > 0 && (requiredEXP <= calcNowEXP(xlCount, lCount, mCount, sCount, xsCount-1)); xsCount = (xsCount - 1) | 0) {
+            console.log(xlCount, lCount, mCount, sCount, xsCount);
+            console.log(calcNowEXP(xlCount, lCount, mCount, sCount, xsCount));
         }
 
-        var excessEXP = xls * 30000 + ls * 10000 + ms * 3000 + ss * 800 + xss * 100 - requiredEXP;
-        console.log(xls + " " + ls + " " + ms + " " + ss + " " + xss);
+        var excessEXP = xlCount * 30000 + lCount * 10000 + mCount * 3000 + sCount * 800 + xsCount * 100 - requiredEXP;
+        console.log(xlCount, lCount, mCount, sCount, xsCount);
         console.log(excessEXP);
-        return [true, xls, ls, ms, ss, xss, excessEXP];
+        return [true, xlCount, lCount, mCount, sCount, xsCount, excessEXP];
     }
+}
+
+//アメを組み合わせたときの経験値を計算する
+let calcNowEXP = function (xl = 0, l = 0, m = 0, s = 0, xs = 0) {
+    let exp = xl * 30000 + l * 10000 + m * 3000 + s * 800 + xs * 100;
+    return exp;
 }

@@ -1,31 +1,42 @@
 ﻿@charset "utf-8";
+
 body {
-    background-color:#757575;   
-    font-size:90%;
-    font-family: "メイリオ",sans-serif;
-    line-height:1.5;
-    color:#333333; /*濃い目のグレー*/
-    padding: 0px 0px 100px 0px;
+	background-color: #757575;
+	font-size: 90%;
+	font-family: "メイリオ", sans-serif;
+	line-height: 1.5;
+	color: #333333;
+	/*濃い目のグレー*/
+	padding: 0px 0px 100px 0px;
 }
+
 div#pagebody {
-    width:80%; margin:0 auto;    /*内容全体をセンタリング*/
-    background-color:#ffffff;       /*内容全体の背景色*/
-    padding: 0px 0px 100px 0px;
+	width: 80%;
+	margin: 0 auto;
+	/*内容全体をセンタリング*/
+	background-color: #ffffff;
+	/*内容全体の背景色*/
+	padding: 0px 0px 100px 0px;
 }
+
 div#inpage {
-    display: flex; /*インライン*/
-    width="1400px"
+	display: flex;
+	/*インライン*/
+	width: "1400px"
 }
+
 div#article {
 	margin-left: 40px;
 }
+
 div#pokemon {
-	text-align:center; 
+	text-align: center;
 	margin: 30px 30px;
 	padding: 10px;
 	border: medium solid #333333;
 	line-height: 30px;
 }
+
 div#game {
 	margin: 30px 30px;
 	padding: 10px;
@@ -33,7 +44,7 @@ div#game {
 }
 
 iframe.menu {
-	border-left:2px dash solid #232232;
+	border-left: 2px dash solid #232232;
 	border-top-width: 0px;
 	border-bottom-width: 0px;
 	border-right-width: 0px;
@@ -41,12 +52,12 @@ iframe.menu {
 	margin-right: 40px;
 }
 
-a.title{
+a.title {
 	text-decoration: none;
-	color:#333333;
+	color: #333333;
 }
 
-table td{
+table td {
 	white-space: nowrap;
 	padding: 3px 3px;
 }
@@ -55,14 +66,33 @@ table {
 	border-collapse: collapse;
 }
 
-table th, table td {
+table th,
+table td {
 	border: solid 2px #dddddd;
-  /*実線 1px 黒*/
+	/*実線 1px 黒*/
 }
+
 h3 {
-	border-bottom:2px solid #232232;
+	border-bottom: 2px solid #232232;
 }
 
 ul {
-	padding-left:0px;
+	padding-left: 0px;
+}
+
+.emph {
+	font-weight: bold;
+}
+
+.und {
+	border-bottom: 1px solid #333333;
+}
+
+@media screen and (max-width: 750px) {
+	div#pagebody {
+		width: 100%;
+	}
+	body {
+		font-size: 100%;
+	}
 }

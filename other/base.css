@@ -88,11 +88,27 @@ ul {
 	border-bottom: 1px solid #333333;
 }
 
+.menu {
+	width: 20%;
+}
+
+
 @media screen and (max-width: 750px) {
 	div#pagebody {
 		width: 100%;
 	}
 	body {
-		font-size: 100%;
+		font-size: 0.7rem;
+	}
+	iframe.menu {
+		border-left: 2px dash solid #232232;
+		border-top-width: 0px;
+		border-bottom-width: 0px;
+		border-right-width: 0px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	div#article {
+		margin-left: 2px;
 	}
 }

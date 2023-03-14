@@ -92,6 +92,11 @@ ul {
 	width: 20%;
 }
 
+.big-picture {
+	width: 60%;
+}
+
+
 @media screen and (max-width: 750px) {
 	div#pagebody {
 		width: 100%;
@@ -109,5 +114,8 @@ ul {
 	}
 	div#article {
 		margin-left: 2px;
+	}
+	.big-picture {
+		width: 100%;
 	}
 }

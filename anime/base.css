@@ -2,7 +2,7 @@
 
 body {
 	background-color: #ff6699;
-	font-size: 90%;
+	font-size: 0.9rem;
 	font-family: "メイリオ", sans-serif;
 	line-height: 1.5;
 	color: #333333;
@@ -92,23 +92,33 @@ ul {
 	width: 20%;
 }
 
+.big-picture {
+	width: 60%;
+}
+
 
 @media screen and (max-width: 750px) {
 	div#pagebody {
+		min-width: calc(320px + 8rem);
 		width: 100%;
+		margin: 0;
 	}
 	body {
 		font-size: 0.7rem;
 	}
 	iframe.menu {
+		min-width: 8em;
 		border-left: 2px dash solid #232232;
 		border-top-width: 0px;
 		border-bottom-width: 0px;
 		border-right-width: 0px;
-		margin-left: 10px;
-		margin-right: 10px;
+		margin-left: 5px;
+		margin-right: 5px;
 	}
 	div#article {
-		margin-left: 2px;
+		margin-left: 0px;
+	}
+	.big-picture {
+		width: 100%;
 	}
 }
